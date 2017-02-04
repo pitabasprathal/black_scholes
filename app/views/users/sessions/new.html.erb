@@ -3,12 +3,10 @@
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group has-feedback">
       <%= f.input :email, class: 'form-control', autofocus: true ,:placeholder=>"Email"%>
-      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
     </div>
 
     <div class="form-group has-feedback">
       <%= f.input :password, class: 'form-control', autocomplete: 'off' ,:placeholder=>"Password"%>
-      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
     </div>
     <div class="row">
       <div class="col-xs-8">
