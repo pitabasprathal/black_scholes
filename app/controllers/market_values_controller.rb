@@ -20,7 +20,7 @@ class MarketValuesController < ApplicationController
   # GET /market_values
   # GET /market_values.json
   def index
-    @market_values = MarketValue.all.paginate(:page => params[:page], :per_page => 7)
+    @market_values = MarketValue.all.where(:user_id=>current_user.id).paginate(:page => params[:page], :per_page => 7)
     @market_value = MarketValue.new
   end
 
@@ -45,7 +45,7 @@ class MarketValuesController < ApplicationController
     @market_value = MarketValue.new(market_value_params)
     if @market_value.save
       @market_value = MarketValue.new
-      @market_values = MarketValue.all.paginate(:page => params[:page], :per_page => 7)
+      @market_values = MarketValue.all.where(:user_id=>current_user.id).paginate(:page => params[:page], :per_page => 7)
       @status = true
     else
       @status = false
@@ -57,7 +57,7 @@ class MarketValuesController < ApplicationController
   def update
     if @market_value.update(market_value_params)
       @market_value = MarketValue.new
-      @market_values = MarketValue.all.paginate(:page => params[:page], :per_page => 7)
+      @market_values = MarketValue.all.where(:user_id=>current_user.id).paginate(:page => params[:page], :per_page => 7)
       @status = true
     else
       @status = false
@@ -69,7 +69,7 @@ class MarketValuesController < ApplicationController
   def destroy
     @market_value.destroy
     @market_value = MarketValue.new
-    @market_values = MarketValue.all.paginate(:page => params[:page], :per_page => 7)
+    @market_values = MarketValue.all.where(:user_id=>current_user.id).paginate(:page => params[:page], :per_page => 7)
     @status = true
   end
 
@@ -81,6 +81,6 @@ class MarketValuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def market_value_params
-      params.require(:market_value).permit(:stock_price, :volatility, :interest_rate, :maturity_time, :strike_price, :direction_id)
+      params.require(:market_value).permit(:stock_price, :volatility, :interest_rate, :maturity_time, :strike_price, :direction_id,:user_id)
     end
 end
