@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stock price:</strong>
+  <%= @market_value.stock_price %>
+</p>
+
+<p>
+  <strong>Volatility:</strong>
+  <%= @market_value.volatility %>
+</p>
+
+<p>
+  <strong>Interest rate:</strong>
+  <%= @market_value.interest_rate %>
+</p>
+
+<p>
+  <strong>Maturity time:</strong>
+  <%= @market_value.maturity_time %>
+</p>
+
+<p>
+  <strong>Strike price:</strong>
+  <%= @market_value.strike_price %>
+</p>
+
+<p>
+  <strong>Direction:</strong>
+  <%= @market_value.direction %>
+</p>
+
+<%= link_to 'Edit', edit_market_value_path(@market_value) %> |
+<%= link_to 'Back', market_values_path %>

@@ -1,0 +1,16 @@
+<%= simple_form_for(@market_value,:remote=>true) do |f| %>
+  <div class="form-inputs">
+    <%= f.association :direction ,:include_blank=>"Select Direction"%>
+    <%= f.input :stock_price %>
+    <%= f.input :strike_price %>
+    <%= f.input :volatility %>
+    <%= f.input :interest_rate %>
+    <%= f.input :maturity_time %>
+  </div>
+
+  <div class="form-actions">
+    <%= link_to 'Cancel' , new_market_value_path,:remote=>true ,:class=>"btn btn-danger"%>
+    <%= f.button :submit ,:class=>"pull-right btn-primary"%>
+  </div> 
+  
+<% end %>

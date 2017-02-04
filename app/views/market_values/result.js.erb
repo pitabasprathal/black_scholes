@@ -1,0 +1,7 @@
+<%if @status == true%>
+	$('#calculator').html("<%= j (render 'calculator_form') %>");
+	$('#result').html("<%= j (render 'result') %>");
+	$('#graph').html("<%= j (render 'result_graph') %>");
+<%else%>
+	$('#calculator').html("<%= j (render 'calculator_form') %>");
+<%end%>

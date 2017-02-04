@@ -1,0 +1,66 @@
+<%if @result.present?%>
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title">Results</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <table class="table table-bordered">
+        <tbody><tr>
+          <th style="width: 10px">#</th>
+          <th>Parameters</th>
+          <th>Call</th>
+          <th>Put</th>
+        </tr>
+        <tr>
+          <td>1.</td>
+          <td>Option Value</td>
+          <td><span class="badge bg-light-blue"><%= @result.option_call%></span></td>
+          <td><span class="badge bg-green"><%= @result.option_put%></span></td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>Delta </td>
+          <td><span class="badge bg-light-blue"><%= @result.delta_call%></span></td>
+          <td><span class="badge bg-green"><%= @result.delta_put%></span></td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>Gamma</td>
+          <td><span class="badge bg-light-blue"><%= @result.gamma%></span></td>
+          <td><span class="badge bg-green"><%= @result.gamma%></span></td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>Theta</td>
+          <td><span class="badge bg-light-blue"><%= @result.theta_call%></span></td>
+          <td><span class="badge bg-green"><%= @result.theta_put%></span></td>
+        </tr>
+        <tr>
+          <td>5.</td>
+          <td>Vega</td>
+          <td><span class="badge bg-light-blue"><%= @result.vega%></span></td>
+          <td><span class="badge bg-green"><%= @result.vega%></span></td>
+        </tr>
+        <tr>
+          <td>6.</td>
+          <td>Rho</td>
+          <td><span class="badge bg-light-blue"><%= @result.rho_call%></span></td>
+          <td><span class="badge bg-green"><%= @result.rho_put%></span></td>
+        </tr>
+        <tr>
+          <td>7.</td>
+          <td>D1</td>
+          <td><span class="badge bg-light-blue"><%= @result.d_one%></span></td>
+          <td><span class="badge bg-green"><%= @result.d_one%></span></td>
+        </tr>
+        <tr>
+          <td>8.</td>
+          <td>D2</td>
+          <td><span class="badge bg-light-blue"><%= @result.d_two%></span></td>
+          <td><span class="badge bg-green"><%= @result.d_two%></span></td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+<%end%>

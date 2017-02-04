@@ -1,0 +1,2 @@
+json.extract! market_value, :id, :stock_price, :volatility, :interest_rate, :maturity_time, :strike_price, :direction_id, :created_at, :updated_at
+json.url market_value_url(market_value, format: :json)

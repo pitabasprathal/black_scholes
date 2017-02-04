@@ -1,0 +1,15 @@
+<div class="login-box-body">
+  <h2>Change your password</h2>
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.hidden_field :reset_password_token %>
+    <div class="form-inputs">
+      <%= f.input :password, autofocus: true, autocomplete: "off" %>
+      <%= f.input :password_confirmation, autocomplete: "off" %>
+    </div>
+    <div class="actions">
+        <%= f.button :submit ,"Update Password" ,:class=>"btn btn-primary btn-block btn-flat"%>
+    </div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</div>

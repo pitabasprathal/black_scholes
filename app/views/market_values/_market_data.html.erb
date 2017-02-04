@@ -1,0 +1,44 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Direction</th>
+      <th>Stock price</th>
+      <th>Strike price</th>
+      <th>Volatility</th>
+      <th>Interest rate</th>
+      <th>Maturity time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @market_values.each do |market_value| %>
+      <tr>
+        <td><%= market_value.direction.name %></td>
+        <td><%= market_value.stock_price %></td>
+        <td><%= market_value.strike_price %></td>
+        <td><%= market_value.volatility %></td>
+        <td><%= market_value.interest_rate %></td>
+        <td><%= market_value.maturity_time %></td>
+        <td>
+          <%= link_to market_value ,:title=>"Result",:remote=>true do%>
+            <i class="fa fa-line-chart fa-2x" aria-hidden="true"></i>
+          <%end%>
+        </td>
+        <td>
+          <%= link_to edit_market_value_path(market_value) ,:title=>"Edit",:remote=>true do%>
+            <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+          <%end%>
+        </td>
+        <td>
+          <%= link_to  market_value, method: :delete, data: { confirm: 'Are you sure?' } ,:title=>"Delete",:remote=>true do%>
+            <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+          <%end%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="col-md-12">
+  <%= will_paginate @market_values, renderer: BootstrapPagination::Rails ,:class=>"pull-right"%>
+</div>

@@ -1,0 +1,1 @@
+json.partial! "market_values/market_value", market_value: @market_value

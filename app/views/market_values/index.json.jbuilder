@@ -1,0 +1,1 @@
+json.array! @market_values, partial: 'market_values/market_value', as: :market_value

@@ -1,0 +1,14 @@
+<%= simple_form_for(@market_value,:remote=>true,:url=>result_market_values_path) do |f| %>
+  <div class="form-inputs">
+    <%= f.association :direction,:include_blank=>"Select Direction" %>
+    <%= f.input :stock_price %>
+    <%= f.input :strike_price %>
+    <%= f.input :volatility %>
+    <%= f.input :interest_rate %>
+    <%= f.input :maturity_time %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

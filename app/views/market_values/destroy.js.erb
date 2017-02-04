@@ -1,0 +1,6 @@
+<% if @status == true%>
+	$('#market-form').html("<%= j (render 'form') %>");
+	$('#market_data').html("<%= j (render 'market_data') %>");
+<%else%>
+	$('#market-form').html("<%= j (render 'form') %>");
+<%end%>

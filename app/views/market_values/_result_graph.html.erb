@@ -1,0 +1,50 @@
+<%if @result.present?%>
+	<div class="box box-info">
+	  <div class="box-header with-border">
+	    <h3 class="box-title">Line Chart</h3>
+	  </div>
+	  <div class="box-body">
+	    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+	  </div>
+	  <!-- /.box-body -->
+	</div>
+<%end%>
+
+
+<script type="text/javascript">
+  $(function () {
+    $('#container').highcharts({
+        chart: {
+                 zoomType: 'x'
+               },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: <%= raw @time%>
+        },
+         yAxis: {
+            title: {
+                text: 'Option Value'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value ;
+                }
+            }
+        },
+        series: [{
+            type: 'line',
+            name: 'Call Option',
+            data: <%= raw @call%>
+        		},
+        		{
+            type: 'line',
+            name: 'Put Option',
+            data: <%= raw @put%>
+        		}]
+    });
+});
+
+
+</script>
