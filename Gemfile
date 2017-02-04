@@ -57,3 +57,4 @@ gem 'simple_form'
 gem 'will_paginate-bootstrap'
 gem "highcharts-rails", "~> 3.0.0"
 gem "chartkick"
+ruby "2.3.0"
